@@ -1,4 +1,3 @@
-
 Author: Maaz Jamal
 
 Folder Structure:
@@ -9,12 +8,12 @@ Folder Structure:
 ├── READ_ME.txt
 ├── atomics
 │   └── moore.h
-├── bin
-├── build
+├── bin (created when make command run for first time. Contains binries)
+├── build (created when make command run for first time. Contains object files)
 ├── data_structures
 │   ├── message.cpp
 │   └── message.hpp
-├── input_data
+├── input_data (stores user input to the models)
 │   ├── main_ATM.txt
 │   ├── main_serial_adder.txt
 │   ├── main_telephone.txt
@@ -23,7 +22,7 @@ Folder Structure:
 │   ├── moore_input_test_transition.txt
 │   └── simplemoore_test.txt
 ├── makefile
-├── simulation_results
+├── simulation_results ( the results of the simulation are stored here)
 │   ├── ATOMIC_TEST_MOORE_outputs.txt
 │   ├── ATOMIC_TEST_MOORE_state.txt
 │   ├── COUPLED_ATM_outputs.txt
@@ -50,20 +49,38 @@ Folder Structure:
 
 1) compiling the program
 
-	- Open the root workspce folder and run the command make all
+	- Open the root workspce folder and run the command:
+		 make all
 	- This will generate all the binaries in bin file
 
 2) Running the programs:
 
 	- There are 6 binaries in bin folder.
-	- To run one of the binary open bin folder
+	- Each binary corresponds to one of the coupled or atomic models.
+	- On Ubuntu use the command ls in bash to list all the binaries
+	- To run one of the binary open bin folder.
 	- Open terminal in bin folder
-	- run the following command ./binary_name
+	- run the following command 
+		./binary_name
 
 3) Inputs and Outputs:
 	
 	- The program takes inputs from txt files in input_data folder
 	- The program outputs result of simulation in the simulation_results folder.
+
+4) Chaging input data:
+	- The programs are hardwired to accept inputs from txt file in input_data. To 
+	change the input. Change the input txt files. Make sure to create a backup of previous
+	file in case of errors.
+	
+├── input_data (stores user input to the models)
+    ├── main_ATM.txt 						for ATM coupled model ( main_ATM.cpp  ./main_ATM)
+    ├── main_serial_adder.txt				for serial_adder coupled model ( main_serial_adder.cpp ./main_serial_adder)
+    ├── main_telephone.txt					for TELEPHONE coupled model ( main_Telephone.cpp  ./main_Telephone)
+    ├── main_vendor.txt						for vendor coupled model (main_vendor.cpp ./main_vendor)
+    ├── moore_input_test.txt				for moore atomic model test ( main_test_moore.cpp ./main_test_moore)
+    ├── moore_input_test_transition.txt		for // 		//		//		//		//
+    └── simplemoore_test.txt				for simplemoore coupled model ( main_test_simplemoore.cpp ./main_test_simplemoore)
 
 Troubleshooting:
 
@@ -83,5 +100,5 @@ Troubleshooting:
 	INCLUDEDESTIMES=-I ~/Cadmium-Simulation-Environment/DESTimes/include
 
 	The program has been tested on Cygwin and WSL Ubuntu20 and has succeslfully compiled,
-	ran and tested on those platforms. 
+	run and tested on those platforms. 
 	

@@ -5,7 +5,7 @@ Folder Structure:
 ├── DEVSmodelsForm_FSM2-CADMIUM.doc
 ├── FSM2-CADMIUM-REPORT.doc
 ├── ModelDescription-FSM2-CADMIUM.xml
-├── READ_ME.txt
+├── README.txt
 ├── atomics
 │   └── moore.h
 ├── bin (created when make command run for first time. Contains binries)
@@ -35,15 +35,15 @@ Folder Structure:
 │   ├── COUPLED_VENDOR_state.txt
 │   ├── COUPLED_serial_adder_outputs.txt
 │   └── COUPLED_serial_adder_state.txt
-├── test
+├── test (contains atomic test for moore model and a coupled test using simple moore machine)
 │   ├── main_test_moore.cpp
 │   └── main_test_simplemoore.cpp
-├── top_model
+├── top_model (contains couples models)
 │   ├── main_ATM.cpp
 │   ├── main_Telephone.cpp
 │   ├── main_serial_adder.cpp
 │   └── main_vendor.cpp
-└── vendor
+└── vendor (external useful libraries)
     ├── NDTime.hpp
     └── iestream.hpp
 
@@ -84,17 +84,18 @@ Folder Structure:
 
 Troubleshooting:
 
-	While attempt has been made to make sure the program is able to compile using 
-	out of the box, provided the CADMIUM libraries are installed following the provided 
-	instructions for ubuntu. 
+	While an attempt has been made to make sure the program is able to compile  
+	out of the box, provided the CADMIUM libraries are installed, following the provided 
+	instructions for Ubuntu. 
 	If Make cannot find the CADMIUM libraries. Please alter the makefile and change the values of 
 	
 	INCLUDECADMIUM=-I ~/CADMIUM/Cadmium-Simulation-Environment/cadmium/include
 	INCLUDEDESTIMES=-I ~/CADMIUM/Cadmium-Simulation-Environment/DESTimes/include
 	
 	To the appropriate location in your computer. 
+	
 	For Cygwin:
-	The cygwin installation may not not contain the initial CADMIUM folder and the include path may be:
+	The cygwin installation may not contain the initial CADMIUM folder and the include path may be:
 
 	INCLUDECADMIUM=-I ~/Cadmium-Simulation-Environment/cadmium/include
 	INCLUDEDESTIMES=-I ~/Cadmium-Simulation-Environment/DESTimes/include
